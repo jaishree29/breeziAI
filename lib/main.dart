@@ -1,3 +1,4 @@
+import 'package:breeziai/utils/colours.dart';
 import 'package:breeziai/views/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -11,9 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'BreeziAI',
-      theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        fontFamily: 'Inter',
+        scaffoldBackgroundColor: MyColours.background,
+        useMaterial3: true,
+      ),
       home: const HomePage(),
     );
   }
