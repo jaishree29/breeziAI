@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:mediapipe_genai/mediapipe_genai.dart';
 import 'package:path_provider/path_provider.dart';
@@ -10,9 +11,9 @@ import 'package:path_provider/path_provider.dart';
 const String modelUrl =
     'https://huggingface.co/litert-community/Gemma3-1B-IT/resolve/main/gemma3-1b-it-int4.task';
 const String modelFileName = 'gemma-1b-4bit.task';
-const String accessToken = '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';
 
-void main() {
+void main() async{
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
@@ -71,7 +72,7 @@ class _HomePageState extends State<HomePage> {
     try {
       final response = await http.get(
         Uri.parse(modelUrl),
-        headers: {'Authorization': 'Bearer $accessToken'},
+        headers: {'Authorization': 'Bearer ${dotenv.env['accessToken']}'},
       );
       print(response.body);
       if (response.statusCode == 200) {
