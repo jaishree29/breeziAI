@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
     try {
       final response = await http.get(
         Uri.parse(modelUrl),
-        headers: {'Authorization': 'Bearer ${dotenv.env['accessToken']}'},
+        headers: {'Authorization': ''},
       );
       print(response.body);
       if (response.statusCode == 200) {
