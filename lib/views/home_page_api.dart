@@ -3,9 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-void main() {
-  runApp(const ChatApp());
-}
+
 
 /// This class encapsulates the logic for making API calls to Hugging Face
 /// endpoints that are compatible with the OpenAI API.

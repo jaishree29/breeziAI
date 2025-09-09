@@ -1,6 +1,7 @@
 import 'package:breeziai/utils/colours.dart';
-import 'package:breeziai/views/home_page.dart';
+// import 'package:breeziai/views/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:breeziai/views/home_page_api.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: MyColours.background,
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const ChatApp(),
     );
   }
 }
